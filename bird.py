@@ -12,6 +12,7 @@ class Bird:
         self.y = y
         self.width = 183
         self.height = 168
+
         if Bird.image == None:
             Bird.image = load_image('bird_animation.png')
 
