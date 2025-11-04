@@ -27,7 +27,7 @@ class Bird:
         self.dir = 1
         self.width = 183
         self.height = 168
-        self.scale = 0.75
+        self.scale = 0.4
 
     def update(self):
         self.x += self.dir * FLY_SPEED_PPS * game_framework.frame_time
@@ -42,6 +42,6 @@ class Bird:
 
     def draw(self):
         if self.face_dir == 1:
-            self.image.clip_draw((int(self.frame) % 5) * self.width, 337 - (int(self.frame) // 5) * self.height, self.width, self.height, self.x, self.y, 50, 50)
+            self.image.clip_draw((int(self.frame) % 5) * self.width, 337 - (int(self.frame) // 5) * self.height, self.width, self.height, self.x, self.y, self.scale * self.width, self.scale * self.height)
         else:
-            self.image.clip_composite_draw((int(self.frame) % 5) * self.width, 337 - (int(self.frame) // 5) * self.height, self.width, self.height, 0, 'h', self.x, self.y, 50, 50)
+            self.image.clip_composite_draw((int(self.frame) % 5) * self.width, 337 - (int(self.frame) // 5) * self.height, self.width, self.height, 0, 'h', self.x, self.y, self.scale * self.width, self.scale * self.height)
