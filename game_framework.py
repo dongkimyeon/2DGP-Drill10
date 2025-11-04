@@ -56,7 +56,7 @@ def run(start_mode):
         stack[-1].draw()
         frame_time = time.time()  - current_time
         frame_rate = 1.0 / frame_time
-        print ("Frame Time: %f Frame Rate: %f" % (frame_time, frame_rate))
+        #print ("Frame Time: %f Frame Rate: %f" % (frame_time, frame_rate))
         current_time += frame_time
         # 여기를 채우시오.
     #멀티태스킹OS
