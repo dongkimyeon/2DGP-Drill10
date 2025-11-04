@@ -48,7 +48,7 @@ def run(start_mode):
     start_mode.init()
 
     # 여기를 채우시오.
-    global frame_time
+    global frame_time #DeltaTime
     current_time = time.time()
     while running:
         stack[-1].handle_events()
@@ -59,6 +59,8 @@ def run(start_mode):
         print ("Frame Time: %f Frame Rate: %f" % (frame_time, frame_rate))
         current_time += frame_time
         # 여기를 채우시오.
+    #멀티태스킹OS
+    #얘만 하는게 아니라 지금 여러개 막 돌리고있어서 프레임 타임이 바뀌는 거임
 
     # repeatedly delete the top of the stack
     while (len(stack) > 0):

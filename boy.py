@@ -33,9 +33,11 @@ def left_up(e):
 
 # Boy Run Speed
 # 여기를 채우시오.
-
-
-
+PIXEL_PER_METER = (10.0 / 0.3)  # 10 pixel 30 cm
+RUN_SPEED_KMPH = 20.0  # Km / Hour
+RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
+RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
+RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
 
 
 
@@ -111,7 +113,7 @@ class Run:
 
     def do(self):
         self.boy.frame = (self.boy.frame + 1) % 8
-        self.boy.x += self.boy.dir * 5
+        self.boy.x += self.boy.dir * RUN_SPEED_PPS * game_framework.frame_time
 
     def draw(self):
         if self.boy.face_dir == 1: # right
@@ -135,7 +137,6 @@ class Boy:
         self.face_dir = 1
         self.dir = 0
         self.image = load_image('animation_sheet.png')
-
         self.IDLE = Idle(self)
         self.SLEEP = Sleep(self)
         self.RUN = Run(self)
