@@ -26,7 +26,7 @@ def init():
     global boy
     global running
 
-    bird = Bird(800, 600)
+    bird = Bird(800, 300)
     game_world.add_object(bird, 1)
     running = True
     grass = Grass()

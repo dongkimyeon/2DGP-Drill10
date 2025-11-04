@@ -165,7 +165,7 @@ class Boy:
 
     def draw(self):
         self.state_machine.draw()
-        self.font.draw(self.x - 60, self.y + 50, f'(Time: {get_time():.2f})', (255, 255, 0))
+        self.font.draw(self.x - 60, self.y + 50, f' {get_time():.2f}', (255, 255, 0))
 
     def fire_ball(self):
         ball = Ball(self.x, self.y, self.face_dir * 10)
